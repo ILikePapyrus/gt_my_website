@@ -1,0 +1,32 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function convertitore() {
+                // Inizializza le variabili
+                var valoreDecimale = document.getElementById("decimaleInserito").value;
+                var valoreBinario = "";
+
+                // Converte il valore
+                while (valoreDecimale > 0) {
+                    // Somma il resto della divisione fra il valoreDecimale e 2 al valore binario ed inserisce questo valore in valoreBinario.
+                    valoreBinario = (valoreDecimale % 2) + valoreBinario;
+                    // Divide il valoreDecimale per 2.
+                    valoreDecimale = Math.floor(valoreDecimale / 2);
+                }
+
+                // Stampa
+                document.getElementById("funConvertitore").innerHTML = valoreBinario;
+            }
+        </script>
+    </head>
+    <body>
+        <!--Titolo-->
+        <h1 align="center"><font size="7" color="black" face="comic sans ms">Convertitore da Decimale a Binario</font></h1>
+        <!--Input decimale-->
+        <input type="text" id="decimaleInserito">
+        <input type="button" value="Inserisci" onclick="convertitore()">
+        <!--Esecutore Script-->
+        <p id="funConvertitore"></p>
+    </body>
+</html>

@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Titolo-->
+        <h1 align="center"><font size="7" color="black" face="comic sans ms">Convertitore da Decimale a Binario</font></h1>
+
+        <!--JAVASCRIPT-->
+        <script>
+            // Variabili globali
+            let binario1;
+            let binario2;
+            let arrBinario1 = [];
+            let arrBinario2 = [];
+
+            // Convertitore valore decimale1
+            function convertitore1() {
+                // Inizializza le variabili
+                let decimale1 = document.getElementById("decimaleInserito1").value;
+                binario1 = "";
+
+                // Controlla il numero inserito. Se il numero esce da questo campo di condizione, non sarà possibile convertirlo in 8 bit, bensì in più bit.
+                if(decimale1 >= 0 && decimale1 <= 255) {
+                    // Converte il valore
+                    while (decimale1 > 0) {
+                        // Somma il resto della divisione fra decimale1 e 2 al valore binario ed inserisce questo valore in binario1.
+                        binario1 = (decimale1 % 2) + binario1;
+                        // Divide decimale1 per 2.
+                        decimale1 = Math.floor(decimale1 / 2);
+                    }
+
+                    binario1 = parseInt(binario1);
+                    
+                    // Stampa
+                    document.getElementById("funConv1").innerHTML = binario1;
+                } else {
+                    // Cosa fare se il decimale1 viola la condizione
+                    let errore1 = "Il numero selezionato non è accettabile. Deve essere inserito un valore compreso fra 0 e 255 inclusi!";
+                    document.getElementById("funConv1").innerHTML = errore1;
+                }
+            }
+
+            // Convertitore valore decimale2
+            function convertitore2() {
+                // Inizializza le variabili
+                let decimale2 = document.getElementById("decimaleInserito2").value;
+                binario2 = "";
+
+                // Controlla il numero inserito. Se il numero esce da questo campo di condizione, non sarà possibile convertirlo in 8 bit, bensì in più bit.
+                if(decimale2 >= 0 && decimale2 <= 255) {
+                    // Converte il valore
+                    while (decimale2 > 0) {
+                        // Somma il resto della divisione fra decimale2 e 2 al valore binario ed inserisce questo valore in binario2.
+                        binario2 = (decimale2 % 2) + binario2;
+                        // Divide decimale2 per 2.
+                        decimale2 = Math.floor(decimale2 / 2);
+                    }
+
+                    binario2 = parseInt(binario2);
+
+                    // Stampa
+                    document.getElementById("funConv2").innerHTML = binario2;
+                } else {
+                    // Cosa fare se il decimale2 viola la condizione
+                    let errore2 = "Il numero selezionato non è accettabile. Deve essere inserito un valore compreso fra 0 e 255 inclusi!";
+                    document.getElementById("funConv2").innerHTML = errore2;
+                }
+            }
+
+            function creaArr() {
+                let arrBinario1 = [];
+                for(let i=0; i<9; i++) {
+                    arrBinario1[i] = binario1[i];
+                    
+                }
+                document.getElementById("funArr") = arrBinario1[i];
+            }
+            // AND
+            function AND() {
+                let arrAND = [];
+                for(let i=0; i<9; i++) {
+                    arrAND[i] = binario1[i] && binario2[i];
+                }
+                document.getElementById("funAND").innerHTML = arrAND;
+            }
+
+            // OR
+            function OR() {
+
+            }
+
+            // XOR
+            function XOR() {
+
+            }
+        </script>
+    </head>
+    <body>
+        <!--HTML-->
+
+        <!--Input decimale1-->
+        <p>
+            <input type="text" id="decimaleInserito1">
+            <input type="button" value="Inserisci!" onclick="convertitore1()">
+            <p id="funConv1"></p>
+        </p>
+        <p id="funArr"></p>
+        
+        <!--Input decimale2-->
+        <p>
+            <input type="text" id="decimaleInserito2">
+            <input type="button" value="Inserisci!" onclick="convertitore2()">
+            <p id="funConv2"></p>
+        </p>
+
+        <!--AND-->
+        <p>
+            <input type="button" value="AND" onclick="AND()">
+            <p id="funAND"></p>
+        </p>
+
+        <!--OR-->
+        <p>
+            <input type="button" value="OR" onclick="OR()">
+            <p id=""></p>
+        </p>
+        
+        <!--XOR-->
+        <p>
+            <input type="button" value="XOR" onclick="XOR()">
+            <p id=""></p>
+        </p>
+    </body>
+</html>

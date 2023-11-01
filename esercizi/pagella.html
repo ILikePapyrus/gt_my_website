@@ -1,0 +1,131 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function nome() {
+                var nome = document.getElementById("nomeInserito").value;
+                document.getElementById("funzioneNome").innerHTML = nome;
+            }
+            
+            function cognome() {
+                var cognome = document.getElementById("cognomeInserito").value;
+                document.getElementById("funzioneCognome").innerHTML = cognome;
+            }
+
+            function italiano() {
+                var checkBoxItaliano = document.getElementById("checkBoxFunIta");
+                var opzioneIta = document.getElementById("opzioneItaInserita");
+                if(checkBoxItaliano.checked == true) {
+                    document.getElementById("opzioneItaInserita").innerHTML = "Voto: 7";
+                } else {
+                    document.getElementById("opzioneItaInserita").innerHTML = "Non c'è nulla da vedere qui";
+                }
+            }
+
+            function storia() {
+                var checkBoxStoria = document.getElementById("checkBoxFunStoria");
+                var opzioneStoria = document.getElementById("opzioneStoriaInserita");
+                if(checkBoxStoria.checked == true) {
+                    document.getElementById("opzioneStoriaInserita").innerHTML = "Voto: ?";
+                } else {
+                    document.getElementById("opzioneStoriaInserita").innerHTML = "Non c'è nulla da vedere qui";
+                }
+            }
+
+            function matematica() {
+                var checkBoxMatematica = document.getElementById("checkBoxFunMate");
+                var opzioneMate = document.getElementById("opzioneMateInserita");
+                if(checkBoxMatematica.checked == true) {
+                    document.getElementById("opzioneMateInserita").innerHTML = "Voto: 6";
+                } else {
+                    document.getElementById("opzioneMateInserita").innerHTML = "Non c'è nulla da vedere qui";
+                }
+            }
+
+            function inglese() {
+                var checkBoxInglese = document.getElementById("checkBoxFunIng");
+                var opzioneIng = document.getElementById("opzioneIngInserita");
+                if(checkBoxInglese.checked == true) {
+                    document.getElementById("opzioneIngInserita").innerHTML = "Voto: 5.5";
+                } else {
+                    document.getElementById("opzioneIngInserita").innerHTML = "Non c'è nulla da vedere qui";
+                }
+            }
+
+            function informatica() {
+                var checkBoxInformatica = document.getElementById("checkBoxFunInf");
+                var opzioneInf = document.getElementById("opzioneInfInserita");
+                if(checkBoxInformatica.checked == true) {
+                    document.getElementById("opzioneInfInserita").innerHTML = "Voto: ?";
+                } else {
+                    document.getElementById("opzioneInfInserita").innerHTML = "Non c'è nulla da vedere qui";
+                }
+            }
+
+            function TPSIT() {
+                var checkBoxTPSIT = document.getElementById("checkBoxFunTPSIT");
+                var opzioneTPSIT = document.getElementById("opzioneTPSITinserita");
+                if(checkBoxTPSIT.checked == true) {
+                    document.getElementById("opzioneTPSITinserita").innerHTML = "Voto: 6";
+                } else {
+                    document.getElementById("opzioneTPSITinserita").innerHTML = "Non c'è nulla da vedere qui";
+                }
+            }
+
+        </script>
+    </head>
+    <body>
+        <h1 align="center"><font size="7" color="black" face="comic sans ms">Pagella</font></h1>
+        <p>
+            <!--Nome-->
+            <input type="text" id="nomeInserito">
+            <input type="button" value="Inserisci" onclick="nome()">
+            <p id="funzioneNome"></p>
+            
+            <!--Cognome-->
+            <input type="text" id="cognomeInserito">
+            <input type="button" value="Inserisci" onclick="cognome()">
+            <p id="funzioneCognome"></p>
+
+            <!--MATERIE-->
+            <p>
+                <!--Italiano-->
+                <p>
+                    <label for="checkBoxFunIta">Italiano:</label>
+                    <input type="checkbox" id="checkBoxFunIta" onclick="italiano()">
+                    <p id="opzioneItaInserita"></p>
+                </p>
+                <!--Storia-->
+                <p>
+                    <label for="checkBoxFunStoria">Storia:</label>
+                    <input type="checkbox" id="checkBoxFunStoria" onclick="italiano()">
+                    <p id="opzioneStoriaInserita"></p>
+                </p>
+                <!--Matematica-->
+                <p>
+                    <label for="checkBoxFunMate">Matematica:</label>
+                    <input type="checkbox" id="checkBoxFunMate" onclick="italiano()">
+                    <p id="opzioneMateInserita"></p>
+                </p>
+                <!--Inglese-->
+                <p>
+                    <label for="checkBoxFunIng">Inglese:</label>
+                    <input type="checkbox" id="checkBoxFunIng" onclick="italiano()">
+                    <p id="opzioneIngInserita"></p>
+                </p>
+                <!--Informatica-->
+                <p>
+                    <label for="checkBoxFunInf">Informatica:</label>
+                    <input type="checkbox" id="checkBoxFunInf" onclick="italiano()">
+                    <p id="opzioneInfInserita"></p>
+                </p>
+                <!--TPSIT-->
+                <p>
+                    <label for="checkBoxFunTPSIT">TPSIT:</label>
+                    <input type="checkbox" id="checkBoxFunTPSIT" onclick="italiano()">
+                    <p id="opzioneTPSITinserita"></p>
+                </p>
+            </p>
+        </p>
+    </body>
+</html>

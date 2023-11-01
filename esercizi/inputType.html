@@ -1,0 +1,17 @@
+<!DOCTYPE html>
+<html>
+	<head>
+		<script>
+			function stampa() {
+				var print=document.getElementById("esercizio").value;
+				document.getElementById("dest").innerHTML=print;
+			}
+		</script>
+	</head>
+	<body>
+		<h1>Vanoni - Esercizio del 23/09/2023</h1>
+		<input type="text" id="esercizio">
+		<input type="button" value="Cliccami!" onclick="stampa()">
+		<p id="dest"></p>
+	</body>
+</html>

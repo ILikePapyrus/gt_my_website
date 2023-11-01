@@ -1,0 +1,108 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Titolo-->
+        <h1 align="center"><font size="7" color="black" face="comic sans ms">Operatori AND, OR, XOR</font></h1>
+        <!--JAVASCRIPT-->
+        <script>
+            var valoreBinario1;
+            var valoreBinario2;
+            // CONVERTITORE DEL VALORE 1
+            function convertitoreValore1() {
+                // Inizializza le variabili
+                var valoreDecimale1 = parseInt(document.getElementById("decimaleInserito1").value);
+                valoreBinario1 = "";
+
+                // Converte il valore
+                while (valoreDecimale1 > 0) {
+                    // Somma il resto della divisione fra il valoreDecimale e 2 al valore binario ed inserisce questo valore in valoreBinario.
+                    valoreBinario1 = (valoreDecimale1 % 2) + valoreBinario1;
+                    // Divide il valoreDecimale per 2.
+                    valoreDecimale1 = Math.floor(valoreDecimale1 / 2);
+                }
+
+                // Stampa
+                document.getElementById("funConvertitore1").innerHTML = valoreBinario1;
+            }
+
+            // CONVERTITORE DEL VALORE 2
+            function convertitoreValore2() {
+                // Inizializza le variabili
+                var valoreDecimale2 = parseInt(document.getElementById("decimaleInserito2").value);
+                valoreBinario2 = "";
+
+                // Converte il valore
+                while (valoreDecimale2 > 0) {
+                    // Somma il resto della divisione fra il valoreDecimale e 2 al valore binario ed inserisce questo valore in valoreBinario.
+                    valoreBinario2 = (valoreDecimale2 % 2) + valoreBinario2;
+                    // Divide il valoreDecimale per 2.
+                    valoreDecimale2 = Math.floor(valoreDecimale2 / 2);
+                }
+
+                // Stampa
+                document.getElementById("funConvertitore2").innerHTML = valoreBinario2;
+            }
+
+            // AND
+            function AND() {
+                let valoreAND = (valoreBinario1 & valoreBinario2);
+                document.getElementById("funAND").innerHTML = valoreAND;
+            }
+
+            // OR
+            function OR() {
+                let valoreOR = valoreBinario1 || valoreBinario2;
+                document.getElementById("funOR").innerHTML = valoreOR;
+            }
+
+            // XOR
+            function XOR() {
+                let valoreXOR = (valoreBinario1 ^ valoreBinario2).toString();
+                document.getElementById("funXOR").innerHTML = valoreXOR;
+            }
+        </script>
+    </head>
+    <body>
+        <!--INSERIMENTO DECIMALE E CONVERSIONE IN BINARIO DEL VALORE 1-->
+        <p>
+            <!--Input decimale-->
+            <input type="text" id="decimaleInserito1">
+            <input type="button" value="Inserisci numero 1" onclick="convertitoreValore1()">
+            <!--Esecutore Script-->
+            <p id="funConvertitore1"></p>
+        </p>
+        
+        <!--INSERIMENTO DECIMALE E CONVERSIONE IN BINARIO DEL VALORE 2-->
+        <p>
+            <!--Input decimale-->
+            <input type="text" id="decimaleInserito2">
+            <input type="button" value="Inserisci numero 2" onclick="convertitoreValore2()">
+            <!--Esecutore Script-->
+            <p id="funConvertitore2"></p>
+        </p>
+        
+        <!--AND-->
+        <p>
+            <!--Input per inizio calcolo AND-->
+            <input type="button" value="AND" onclick="AND()">
+            <!--Esecutore Script-->
+            <p id="funAND"></p>
+        </p>
+        
+        <!--OR-->
+        <p>
+            <!--Input per inizio calcolo OR-->
+            <input type="button" value="OR" onclick="OR()">
+            <!--Esecutore Script-->
+            <p id="funOR"></p>
+        </p>
+        
+        <!--XOR-->
+        <p>
+            <!--Input per inzio calcolo XOR-->
+            <input type="button" value="XOR" onclick="XOR()">
+            <!--Esecutore Script-->
+            <p id="funXOR"></p>
+        </p>
+    </body>
+</html>

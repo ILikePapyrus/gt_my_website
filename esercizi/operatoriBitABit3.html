@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <!--Titolo-->
+        <h1 align="center"><font size="7" color="black" face="comic sans ms">Convertitore da Decimale a Binario</font></h1>
+
+        <!--JAVASCRIPT-->
+        <script>
+            // Variabili globali
+            let binario1;
+            let binario2;
+            const arrBinario1 = [0, 0, 0, 0, 0, 0, 0, 0];
+            let arrBinario2 = [];
+
+            // Convertitore valore decimale1
+            function convertitore1() {
+                // Inizializza le variabili
+                let decimale1 = document.getElementById("decimaleInserito1").value;
+                binario1 = "";
+
+                // Controlla il numero inserito. Se il numero esce da questo campo di condizione, non sarà possibile convertirlo in 8 bit, bensì in più bit.
+                if(decimale1 >= 0 && decimale1 <= 255) {
+                    // Converte il valore
+                    let passi=0;
+                    while (decimale1 > 0) {
+                        // Somma il resto della divisione fra decimale1 e 2 al valore binario ed inserisce questo valore in binario1.
+                        binario1 = (decimale1 % 2) + binario1;
+                        // Divide decimale1 per 2.
+                        decimale1 = Math.floor(decimale1 / 2);
+                        passi++;
+                    }
+                    
+                    binario1 = parseInt(binario1);
+                    for(let i=1; i<=8-passi; i++) {
+                        binario1 = "0" + binario1;
+                    }
+                    // Stampa
+                    document.getElementById("funConv1").innerHTML = binario1;
+                } else {
+                    // Cosa fare se il decimale1 viola la condizione
+                    let errore1 = "Il numero selezionato non è accettabile. Deve essere inserito un valore compreso fra 0 e 255 inclusi!";
+                    document.getElementById("funConv1").innerHTML = errore1;
+                }
+            }
