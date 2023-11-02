@@ -1,22 +1,8 @@
-body {
-    background: #fff;
-    font: 100% system-ui;
+html {
+    background-color: #000205;
 }
 
-h1,
-p {
-    color: #222;
-}
-
-body-dark-theme {
-    background: #121212;
-}
-
-body.dark-theme h1, 
-body.dark-theme p {
-    color: #eee;
-}
-
-body.dark-theme a {
-    color: #809fff;
+nav {
+    background-color: #051c42;
+    color: #d9e6fc;
 }
