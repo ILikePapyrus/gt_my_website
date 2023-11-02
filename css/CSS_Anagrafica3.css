@@ -1,8 +1,8 @@
-h1 {
+h1, h2 {
     font-family: 'Gill Sans', 'Gill Sans MT', Calibri, 'Trebuchet MS', sans-serif;
     font: 800;
     text-align: center;
-    padding-top: 15px;
+    padding-top: 5px;
     color: #d9e6fc;
 }
 
