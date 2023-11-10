@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html>
+    <!--RICORDATI BOOTSTRAP-->
+    <!--RICORDATI DI FARE TEMA CHIARO E HOME SCREEN E PAGINA ESERCIZI-->
+    <!--Import libreria-->
+
+    <!--JAVASCRIPT-->
+    <script>
+        // JAVASCRIPT ESERCIZIO
+        function calcolo(segno) {
+            // Esempio di come deve essere fatto: const test = ["123", "+", "146"];
+            //let arrayCalcolo = [];
+            //arrayCalcolo.push(document.getElementById(campoN1).innerHTML);
+            let num1 = parseInt(document.getElementById("campoN1").value);
+            let num2 = parseInt(document.getElementById("campoN2").value);
+            document.getElementById("risultato").innerHTML = num1 + num2;
+        }
+    </script>
+
+    <!--RICORDATI FOGLIO CSS PER STILE (GUARDARE ANAGRAFICA)-->
+    <!--CSS-->
+    <link rel="stylesheet" href="CSS_Calcolatrice.css">
+    <!--Bootstrap-->
+    <head>
+
+    </head>
+
+    <!--HTML ESERCIZIO-->
+    <body>
+        <!--Titolo-->
+        <h1>Calcolatrice</h1>
+        <h2>Marco Vanoni</h2>
+
+        <!--Inserimento numeri-->
+        <p>
+            <input type="text" placeholder="Numero 1" id="campoN1">
+            <input type="text" placeholder="Numero 2" id="campoN2">
+            <p id="risultato"></p>
+        </p>
+        
+        <!--
+        <table>    
+            <tr>
+                <th> </th>
+                <th> </th>
+                <th> </th>
+                <th><input type="button" value="/" onclick=""></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="7" onclick=""></th>
+                <th><input type="button" value="8" onclick=""></th>
+                <th><input type="button" value="9" onclick=""></th>
+                <th><input type="button" value="x" onclick=""></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="4" onclick=""></th>
+                <th><input type="button" value="5" onclick=""></th>
+                <th><input type="button" value="6" onclick=""></th>
+                <th><input type="button" value="-" onclick=""></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="1" onclick=""></th>
+                <th><input type="button" value="2" onclick=""></th>
+                <th><input type="button" value="3" onclick=""></th>
+                <th><input type="button" value="+" onclick=""></th>
+            </tr>
+            <tr>
+                <th><input type="button" value="+/-" onclick=""></th>
+                <th><input type="button" value="0" onclick=""></th>
+                <th><input type="button" value="." onclick=""></th>
+                <th><input type="button" value="=" onclick=""></th>
+            </tr>
+        </table>
+        <h4>Funzionano solo i tasti per le operazioni!!</h4>-->
+        <table>
+            <tr>
+                <th><input type="button" value="+" onclick="calcolo('+')"></th>
+                <th><input type="button" value="-" onclick="calcolo('-')"></th>
+                <th><input type="button" value="/" onclick="calcolo('/')"></th>
+                <th><input type="button" value="*" onclick="calcolo('*')"</th>
+            </tr>
+        </table>
+    </body>
+</html>
