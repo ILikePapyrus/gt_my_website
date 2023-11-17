@@ -1,0 +1,63 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            let n1;
+            let n2;
+
+            function inserimento() {
+                n1 = parseInt(document.getElementById("input1").value);
+                n2 = parseInt(document.getElementById("input2").value);
+            }
+
+            function calcolo() {
+                var operatore = document.getElementById("inputOperatore").value;
+                switch(operatore) {
+                    case "+":
+                        var somma = n1 + n2;
+                        document.getElementById("stampaSomma").innerHTML = n1 + " + " + n2 + " = " + somma;
+                        break;
+                    case "-":
+                        var differenza = n1 - n2;
+                        document.getElementById("stampaSomma").innerHTML = n1 + " - " + n2 + " = " + differenza;
+                        break;
+                    case "*":
+                        var prodotto = n1 * n2;
+                        document.getElementById("stampaSomma").innerHTML = n1 + " * " + n2 + " = " + prodotto;
+                        break;
+                    case "/":
+                        var quoziente = n1 / n2;
+                        document.getElementById("stampaSomma").innerHTML = n1 + " / " + n2 + " = " + quoziente;
+                        break;
+                    case "DEL":
+                        n1 = 0;
+                        n2 = 0;
+                        break;
+                    default:
+                        document.getElementById("stampaRisultato").innerHTML = "";
+               }                
+            }
+            
+        </script>
+    </head>
+    <body>
+        <h1>CALCOLATRICE 1</h1>
+
+        <!--Inserimento numeri-->
+        <input type="text" id="input1">
+        <input type="text" id="input2">
+        <input type="button" value="Inserisci!" onclick="inserimento()">
+        
+        <p>
+            
+        </p>
+        
+        <input type="button" value="+" id="inputOperatore" onclick="calcolo()">
+        <input type="button" value="-" id="inputOperatore" onclick="calcolo()">
+        <input type="button" value="*" id="inputOperatore" onclick="calcolo()">
+        <input type="button" value="/" id="inputOperatore" onclick="calcolo()">
+        <input type="button" value="DEL" id="inputOperatore" onclick="calcolo()">
+
+        <div id="stampaSomma"></div>
+    </body>
+</html>
