@@ -1,0 +1,107 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <script>
+            function calcolo(op) {
+                // Dichiarazione variabili
+                let n1;
+                let n2;
+
+                // Cosa fare in base alla variabile passata
+                switch(op) {
+                    // Somma
+                    case "+":
+                        // Passaggio variabili
+                        n1 = parseInt(document.getElementById("input1").value);
+                        n2 = parseInt(document.getElementById("input2").value);
+                        
+                        // Somma variabili
+                        var somma = n1 + n2;
+                        // Stampa
+                        document.getElementById("stampaRisultato").innerHTML = n1 + " + " + n2 + " = " + somma;
+                        break;
+                    // Differenza
+                    case "-":
+                        // Passaggio variabili
+                        n1 = parseInt(document.getElementById("input1").value);
+                        n2 = parseInt(document.getElementById("input2").value);
+                        
+                        // Differenza variabili
+                        var differenza = n1 - n2;
+                        // Stampa
+                        document.getElementById("stampaRisultato").innerHTML = n1 + " - " + n2 + " = " + differenza;
+                        
+                        break;
+                    // Prodotto
+                    case "*":
+                        // Passaggio variabili
+                        n1 = parseInt(document.getElementById("input1").value);
+                        n2 = parseInt(document.getElementById("input2").value);
+                        
+                        // Prodotto variabili
+                        var prodotto = n1 * n2;
+                        // Stampa
+                        document.getElementById("stampaRisultato").innerHTML = n1 + " * " + n2 + " = " + prodotto;
+                        
+                        break;
+                    // Quoziente
+                    case "/":
+                        // Passaggio variabili    
+                        n1 = parseInt(document.getElementById("input1").value);
+                        n2 = parseInt(document.getElementById("input2").value);
+                        
+                        // Quoziente variabili
+                        var quoziente = n1 / n2;
+                        // Stampa
+                        document.getElementById("stampaRisultato").innerHTML = n1 + " / " + n2 + " = " + quoziente;
+                        
+                        break;
+                    // Modulo
+                    case "%":
+                        // Passaggio variabili
+                        n1 = parseInt(document.getElementById("input1").value);
+                        n2 = parseInt(document.getElementById("input2").value);
+                        
+                        // Modulo fra le due variabili
+                        var modulo = n1 % n2;
+                        // Stampa
+                        document.getElementById("stampaRisultato").innerHTML = n1 + " % " + n2 + " = " + modulo;
+                        
+                        // Reset operatore
+                        operatore = "";
+                        break;
+                    case "DEL":
+                        // Reset variabili
+                        document.getElementById("input1").value = "";
+                        document.getElementById("input2").value = "";
+                        document.getElementById("stampaRisultato").innerHTML = "";
+                        break;
+                    default:
+                        
+                }
+            }
+            
+        </script>
+    </head>
+    <body>
+        <h1>CALCOLATRICE 1</h1>
+
+        <!--Inserimento numeri-->
+        <input type="text" id="input1" placeholder="Numero 1">
+        <input type="text" id="input2" placeholder="Numero 2">
+        <p>
+            
+        </p>
+        
+        <!--Inserimento operatori-->
+        <input type="button" value="+" id="inputOperatore" onclick="calcolo('+')">
+        <input type="button" value="-" id="inputOperatore" onclick="calcolo('-')">
+        <input type="button" value="*" id="inputOperatore" onclick="calcolo('*')">
+        <input type="button" value="/" id="inputOperatore" onclick="calcolo('/')">
+        <input type="button" value="%" id="inputOperatore" onclick="calcolo('%')">
+        <input type="button" value="DEL" id="inputOperatore" onclick="calcolo('DEL')">
+
+        <!--Stampa-->
+        <div id="stampaRisultato"></div>
+    </body>
+</html>
