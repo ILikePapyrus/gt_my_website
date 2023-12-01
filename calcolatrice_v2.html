@@ -4,10 +4,23 @@
         <script>
             // CODICE JAVASCRIPT
             function calcolo(op) {
+                let n1;
+                let n2;
+                let risultato;
 
+                switch(op) {
+                    case "^2":
+                        n1 = document.getElementById("inputN1").value;
+                        let squared = Math.pow(n1, 2);
+                        risultato = squared;
+                        break;
+                    case "=":
+                        document.getElementById("stampaRisultato").innerHTML = risultato;
+                        break;
+                }
+                
             }
         </script>
-
     </head>
     <body>
         <!--CODICE HTML-->
@@ -19,7 +32,7 @@
         <!--Tabella input-->
         <table border="1px">
             <tr>
-                <th><input type="button" value="^2" onclick=""></th>
+                <th><input type="button" value="^2" onclick="power"></th>
                 <th><input type="button" value="%"></th>
                 <th><input type="button" value="√"></th>
                 <th><input type="button" value="DEL"></th>
