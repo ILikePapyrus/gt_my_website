@@ -1,5 +1,5 @@
 # gt_my_website
-## Link: https://ilikepapyrus.github.io/gt_my_website/
+### Link: https://ilikepapyrus.github.io/gt_my_website/
 
 Repo with my files for my website
 
