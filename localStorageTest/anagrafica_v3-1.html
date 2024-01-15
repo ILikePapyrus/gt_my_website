@@ -1,0 +1,157 @@
+<!DOCTYPE html>
+
+<html>
+    <!--BOOTSTRAP-->
+    <!--Import libreria-->
+    <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-T3c6CoIi6uLrA9TneNEoa7RxnatzjcDSCmG1MXxSR1GAsXEV/Dwwykc2MPK8M2HN" crossorigin="anonymous">
+    <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.2/dist/js/bootstrap.bundle.min.js" integrity="sha384-C6RzsynM9kWDrMNeT87bh95OGNyZPhcTNXj1NW7RuBCsyN/o0jlpcV8Qyq46cDfL" crossorigin="anonymous"></script>
+
+    <!--JAVASCRIPT-->
+    <script>
+        function identita() {
+            // Caratteristiche utente
+            let nome = document.getElementById("campoNome").value;
+            let cognome = document.getElementById("campoCognome").value;
+            let sesso = document.getElementsByName("varSesso").value;
+            
+            // Informazioni residenza utente
+            let indirizzo = document.getElementById("campoIndirizzo").value;
+            let citta = document.getElementById("campoCitta").value;
+            let provincia = document.getElementById("listBoxProvincia").value;
+            
+            // Stampa informazioni raccolte
+            //document.getElementById("outputNomeCognome").innerHTML = "Alunno: " + nome + " " + cognome  + "; sesso: " + sesso + ".";
+            //document.getElementById("outputResidenza").innerHTML = "Residenza: " + indirizzo + ", " + citta + ", " + provincia + ".";
+            
+            if(typeof(Storage) !== "undefined") {
+                localStorage.setItem("campoNome", nome);
+            } else {
+                document.location.href="stampa.html";
+            }
+        }
+
+        function materie() {
+            // HO PROVATO A USARE GLI ARRAY COME MI AVEVA DETTO IL PROF PETROZZI
+            // MA NON RIUSCIVO A FARLI FUNZIONARE. HO COMUNQUE TROVATO UN ALTRO METODO CHE
+            // HA RIDOTTO UN PO' IL NUMERO DI RIGHE (anche se di non tanto in realtà...) E SOPRATTUTTO DI METODI
+            
+            
+            // Salvataggio variabile checkbox
+            let italiano = document.getElementById("checkBoxItaliano");
+            let storia = document.getElementById("checkBoxStoria");
+            let mate = document.getElementById("checkBoxMate");
+            let inglese = document.getElementById("checkBoxIng");
+            let info = document.getElementById("checkBoxInfo");
+            let TPSIT = document.getElementById("checkBoxTPSIT");
+
+            // Stampa voti
+            // Italiano
+            if(italiano.checked == true) {
+                document.getElementById("stampaIta").innerHTML = "Italiano: voto 6; ";
+            } else {
+                document.getElementById("stampaIta").innerHTML = "";
+            }
+
+            // Storia
+            if(storia.checked == true) {
+                document.getElementById("stampaStoria").innerHTML = "Storia: voto 5.5";
+            } else {
+                document.getElementById("stampaStoria").innerHTML = "";
+            }
+
+            // Matematica
+            if(mate.checked == true) {  
+                document.getElementById("stampaMate").innerHTML = "Matematica: voto 4";
+            } else {
+                document.getElementById("stampaMate").innerHTML = "";
+            }
+
+            // Inglese
+            if(inglese.checked == true) {
+                document.getElementById("stampaInglese").innerHTML = "Inglese: voto 8";
+            } else {
+                document.getElementById("stampaInglese").innerHTML = "";
+            }
+
+            // Informatica
+            if(info.checked == true) {
+                document.getElementById("stampaInfo").innerHTML = "Informatica: voto 7.5";
+            } else {
+                document.getElementById("stampaInfo").innerHTML = "";
+            }
+
+            // TPSIT
+            if(TPSIT.checked == true) {
+                document.getElementById("stampaTPSIT").innerHTML = "TPSIT: voto 7";
+            } else {
+                document.getElementById("stampaTPSIT").innerHTML = "";
+            }
+        }
+    </script>
+
+    <!--HTML ESERCIZIO-->
+    <body class="body-color">
+        <h1>Pagella</h1>
+        <h2>Marco Vanoni</h2>
+        <div id="para1">
+            <p> 
+                <!--Inserimento nome e cognome-->
+                <!--placeholder="" mette la scritta nel campo di inserimento che scompare appena si inserisce un carattere-->
+                <input type="text" placeholder="Nome" id="campoNome">
+                <input type="text" placeholder="Cognome" id="campoCognome">
+            </p>
+            
+            <p>
+                <!--Radiobutton per selezione sesso - NON FUNZIONANO :(-->
+                Maschio <input type="radio" name="varSesso" value="maschio"> 
+                Femmina <input type="radio" name="varSesso" value="femmina">
+            </p>
+
+            <br>
+            
+            <p>
+                <!--Inserimento indirizzo-->
+                <input type="text" placeholder="Indirizzo" id="campoIndirizzo">
+                <!--Inserimento città-->
+                <input type="text" placeholder="Città" id="campoCitta">
+                <!--Listbox provincie-->
+                Provincia: <select name="provincia" id="listBoxProvincia">
+                    <option value="MI">MI</option>
+                    <option value="RM">RM</option>
+                    <option value="TO">TO</option>
+                    <option value="IM">IM</option>
+                </select>
+            </p>
+            
+            <!--Avvio prima funzione per l'inserimento dei dati dell'utente-->
+            <!--<input type="button" value="Inserisci!" onclick="identita()">-->
+            <!--Stampa dati utente-->
+            <!--
+            <p id="outputNomeCognome"></p>
+            <p id="outputResidenza"></p>
+            
+            <br>
+
+            <p>
+                Checkbox Materie
+                Italiano:    <input type="checkbox" id="checkBoxItaliano" onclick="materie()">
+                Storia:      <input type="checkbox" id="checkBoxStoria" onclick="materie()">
+                Matematica:  <input type="checkbox" id="checkBoxMate" onclick="materie()">
+                Inglese:     <input type="checkbox" id="checkBoxIng" onclick="materie()">
+                Informatica: <input type="checkbox" id="checkBoxInfo" onclick="materie()">
+                TPSIT:       <input type="checkbox" id="checkBoxTPSIT" onclick="materie()">
+
+                Stampa dei voti
+                <p id="stampaIta"></p>
+                <p id="stampaStoria"></p>
+                <p id="stampaMate"></p>
+                <p id="stampaInglese"></p>
+                <p id="stampaInfo"></p>
+                <p id="stampaTPSIT"></p>
+            </p> -->
+            <input type="button" value="Inserisci dati personali" onclick="identita()"> <!-- Pulsante per inviare file a seconda pagina -->
+        </div>
+        
+    </body>
+
+</html>

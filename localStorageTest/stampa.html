@@ -1,0 +1,19 @@
+<!DOCTYPE html>
+
+<html>
+    <head>
+        <script>
+            function ricevi() {
+                let nome = localStorage.getItem("nomeRicevuto");
+
+                document.getElementById("stampaNome").innerHTML = nome;
+            }
+        </script>
+    </head>
+    
+    <body>
+        <h1>Dati ricevuti</h1>
+        <p id="stampaNome"></p>
+        <input type="button" onclick="ricevi()" value="Visualizza dati">
+    </body>
+</html>
