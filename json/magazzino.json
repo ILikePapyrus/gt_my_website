@@ -1,0 +1,52 @@
+{
+    "magazzino": [
+       {
+          "nome": "Mela",
+          "categoria": "Frutta",
+          "prezzoacquisto": 2,
+          "prezzovendita": 8,
+          "quantita": 40,
+          "img": "https://www.studiotrevisani.it/wp-content/uploads/2017/12/mela.png"
+       },
+       {
+          "nome": "Arance",
+          "categoria": "Frutta",
+          "prezzoacquisto": 4,
+          "prezzovendita": 15,
+          "quantita": 70,
+          "img": "https://th.bing.com/th/id/R.62c9634eda7806b5c1f4bec4576249b5?rik=Jn3E1UFUtJ3kjg&riu=http%3a%2f%2fpublicdomainpictures.net%2fpictures%2f30000%2fvelka%2farancia-siciliana.jpg&ehk=ZuJEcpRIuT7EggYwdWOp44zff22r5bkTvPbhhZH7KiM%3d&risl=&pid=ImgRaw&r=0"
+       },
+       {
+          "nome": "Zucchine",
+          "categoria": "Verdura",
+          "prezzoacquisto": 3,
+          "prezzovendita": 8,
+          "quantita": 20,
+          "img": "https://www.learnaboutnature.com/wp-content/uploads/zucchini.jpg"
+       },
+       {
+          "nome": "Pomodori",
+          "categoria": "Verdura",
+          "prezzoacquisto": 4,
+          "prezzovendita": 6,
+          "quantita": 15,
+          "img": "https://th.bing.com/th/id/OIP.4y0WLUCUffdS7Ai7ACOdHwHaHa?rs=1&pid=ImgDetMain"
+       },
+       {
+          "nome": "Lamponi",
+          "categoria": "Bacche",
+          "prezzoacquisto": 1,
+          "prezzovendita": 20,
+          "quantita": 100,
+          "img": "https://www.verdepiusnc.it/wp-content/uploads/2016/06/Cover-Lampone_high.jpg"
+       },
+       {
+          "nome": "Acqua",
+          "categoria": "Bevande",
+          "prezzoacquisto": 2,
+          "prezzovendita": 3,
+          "quantita": 40,
+          "img": "https://d2f5fuie6vdmie.cloudfront.net/asset/ita/2022/27/12dcc156da838783a8817ac974a21bcfe9f30b51.jpeg"
+       }
+    ]
+ }

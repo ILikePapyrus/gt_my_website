@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/bootstrap@4.6.2/dist/css/bootstrap.min.css">
+</head>
+
+<body>
+    <TABLE id="t1" class="table table-striped">
+    <input id="CT" type="text">
+    <input id="b1" type="button" onclick="LetturaFile();" value="Crea tabella">
+    <p id="PV"></p>
+        <script>
+            function LetturaFile() {
+                let xhr = new XMLHttpRequest();
+
+                xhr.open("GET", "json/magazzino.json", true); 
+                xhr.send(); 
+
+                xhr.onload = function () {
+                    const oggetto = JSON.parse(xhr.responseText); 
+
+                    str = "<tr><th> Nome Prodotto </th> <th> Categoria </th> <th> Prezzo Acquisto </th> <th> Prezzo Vendita </th>";
+                    str = str +  "<th> Quantita' </th> <th> Guadagno </th> <th> Immagine </th> </tr>";
+                    guadagnoTotale = 0;
+
+                    for (i = 0; i < oggetto.magazzino.length; i++) {
+                        str = str + "<tr><td>" + oggetto.magazzino[i].nome + "</td><td>" + oggetto.magazzino[i].categoria + "</td><td>" + 
+                            oggetto.magazzino[i].prezzoacquisto + "</td><td>" + (oggetto.magazzino[i].prezzovendita + 
+                            ((oggetto.magazzino[i].prezzovendita * document.getElementById("CT").value) / 100)) + "</td><td>" + 
+                            oggetto.magazzino[i].quantita + "</td><td>" + (oggetto.magazzino[i].prezzovendita - oggetto.magazzino[i].prezzoacquisto) + 
+                            "</td><td><a href=" + oggetto.magazzino[i].img + "><img src=" + 
+                            oggetto.magazzino[i].img + " width='50'></a></td></tr>";
+                        guadagnoTotale = guadagnoTotale + (oggetto.magazzino[i].prezzovendita - oggetto.magazzino[i].prezzoacquisto);
+                        
+                    }
+                    
+                    str = str + "</TABLE>";
+                    document.getElementById("t1").innerHTML = str;
+                    document.getElementById("PV").innerHTML = guadagnoTotale;
+                }
+                document.getElementById("b1").disabled = true;           
+            }
+        </script>
+
+</body>
+
+</html>
