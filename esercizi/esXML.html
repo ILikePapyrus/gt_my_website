@@ -1,0 +1,21 @@
+<!DOCTYPE html>
+<html>
+    <body>
+        <div id="demo">
+            <button type="button" onclick="loadXMLDoc()">Change Content</button>
+        </div>
+
+        <script>
+            function loadXMLDoc() {
+                var xhttp = new XMLHttpRequest();
+                xhttp.onreadystatechange = function() {
+                    if(this.readyState == 4 && this.status == 200) {
+                        document.getElementById("demo").innerHTML = this.responseText;
+                    }
+                };
+                xhttp.open("GET", "https://raw.githubusercontent.com/ILikePapyrus/gt_my_website/refs/heads/main/XML/anagrafica_XML.xml", true);
+                xhttp.send();
+            }
+        </script>
+    </body>
+</html>
