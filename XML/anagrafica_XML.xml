@@ -1,59 +1,50 @@
 <?xml version="1.0" encoding="UTF-8"?>
+<?xml-stylesheet href="file.xsl" type="text/xsl"?>
 
 <anagrafica>
     <persona>
         <nome>Mario</nome>
         <cognome>Rossi</cognome>
         <eta>45</eta>
-        <indirizzo>
             <via>Via Roma</via>
             <civico>123</civico>
             <citta>Milano</citta>
-        </indirizzo>
         <professione>Ingegnere civile</professione>
     </persona>
     <persona>
         <nome>Maria</nome>
         <cognome>Bianchi</cognome>
         <eta>28</eta>
-        <indirizzo>
             <via>Piazza della Repubblica</via>
             <civico>1</civico>
             <citta>Firenza</citta>
-        </indirizzo>
         <professione>Chirurgo</professione>
     </persona>
     <persona>
         <nome>Luca</nome>
         <cognome>Verdi</cognome>
         <eta>42</eta>
-        <indirizzo>
             <via>Corso Vittorio Emanuele </via>
             <civico>45</civico>
             <citta>Napoli</citta>
-        </indirizzo>
         <professione>Avvocato</professione>
     </persona>
     <persona>
         <nome>Anna</nome>
         <cognome>Neri</cognome>
         <eta>30</eta>
-        <indirizzo>
             <via>Via Garibaldi</via>
             <civico>18</civico>
             <citta>Torino</citta>
-        </indirizzo>
         <professione>Insegnante</professione>
     </persona>
     <persona>
         <nome>Marco</nome>
         <cognome>Gialli</cognome>
         <eta>25</eta>
-        <indirizzo>
             <via>Via Dante</via>
             <civico>23</civico>
             <citta>Bologna</citta>
-        </indirizzo>
         <professione>Programmatore</professione>
     </persona>
 </anagrafica>
