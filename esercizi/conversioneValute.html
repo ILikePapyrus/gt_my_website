@@ -112,6 +112,8 @@
             </div>
         </div>
 
+        <p>In realtà è inutile mettere una valuta di partenza, non cambia nulla...</p>
+
         <!-- JAVASCRIPT -->
         <script>
                 // Lettore XML
@@ -123,50 +125,51 @@
                             convertitore(this);
                         }
                     }
-                    xhttp.open("GET", "https://github.com/ILikePapyrus/gt_my_website/blob/main/XML/eurofxref-daily.xml", true);
+                    xhttp.open("GET", "../XMl/eurofxref-daily.xml", true);
                     xhttp.send();
                 }
 
                 // Converte la quantità in input
                 function convertitore(xml) {
-                    /*
-                    // Lettore XML
-                    var xmlDoc = xml.responseXML;
-                    // Salva valore inserito
-                    var valoreDaConvertire = document.getElementById("valoreIn").value;
-                    // Inizializzo array contenente TUTTI i tassi di cambio di TUTTE le valute
-                    var arrayTassiCambio;
-                    // Riempire l'array dei tassi di cambio
-                    for(let i = 0; i < 30; i++) {
-                        arrayTassiCambio = document.getElementsByTagName("Cube");
+                    // Importa XML
+                    var xmlDocs = xml.responseXML;
+                    // Legge tutto il file
+                    var cubes = xmlDocs.getElementsByTagName("Cube");
+                    // Dizionario dove salvare valute
+                    var rates = {};
+
+                    // Riempie dizionario
+                    for(var i=0; i<cubes.length; i++) {
+                        var currency = cubes[i].getAttribute("currency");
+                        var rate = cubes[i].getAttribute("rate");
+                        if(currency && rate) {
+                            rates[currency] = parseFloat(rate);
+                        }
                     }
 
+                    // Stampa in console dizionario
+                    console.log(rates)
 
+                    // Valore in ingresso
+                    var valoreIn = parseFloat(document.getElementById("valoreIn").value);
+                    // Valuta in cui si vuole convertire
+                    var valutaFinale = document.getElementById("dropdownValutaFinale");
 
-                    // Inizializza variabile valoreConvertito
-                    var valoreConvertito = 0;
-
-                    // Cicla lunghezza arrayTassiCambio
-                    /*
-                    for(var i=0; i<arrayTassiCambio.length; i++) {
-                        if()
-                    }*/
-
-                    // Sostituisce valore convertito a valore di default dell'output box
-                    document.getElementById("valoreIn").value = valoreConvertito;
+                    // Conversione
+                    if(rates[valutaFinale]) {
+                        var valoreOut = valoreIn * rates[valutaFinale];
+                        // Stampa in console valore convertito
+                        console.log(valoreOut.toFixed(2));
+                    }
                 }
 
                 // Sostituisce il testo visibile nel dropdown con ciò che è selezionato
                 function cambiaLabelDropdown(buttonId, menuId) {
-                    // Distingue i due dropdown
-                    var arrPulsanti = document.querySelectorAll('#' + menuId + ' .dropdown-item');
-                    // Cicla array
+                    var menu = document.getElementById(menuId);
+                    var items = menu.getElementsByClassName('dropdown-item');
                     for (var i = 0; i < items.length; i++) {
-                        // Controlla se avviene un click
                         items[i].addEventListener('click', function() {
-                            // Prende il testo del pulsante selezionato
                             var button = document.getElementById(buttonId);
-                            // Sostituisce il testo
                             button.textContent = this.getAttribute('data-value');
                         });
                     }
