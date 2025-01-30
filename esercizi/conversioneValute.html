@@ -1,6 +1,6 @@
 <!DOCTYPE html>
 
-<html>
+<html lang="it">
     <head>
         <!-- Base per sito -->
         <meta charset="UTF-8">
@@ -14,101 +14,204 @@
         <link rel="stylesheet" href="../css/CSS_conversioneValute.css">
     </head>
     <body>
+        <!-- Titolo -->
         <h1>Convertitore di Valute</h1>
-        <div>
-            <input type="number" step="0.01" min="0" placeholder="Quantità">
-            <!-- Seleziona valuta di partenza -->
-            <div class="btn-group">
-                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Valuta di Partenza
-                </button>
-                <ul class="dropdown-menu custom-scroll-dropdown-menu">
-                  <li><a class="dropdown-item" href="#">USD</a></li>
-                  <li><a class="dropdown-item" href="#">JPY</a></li>
-                  <li><a class="dropdown-item" href="#">BGN</a></li>
-                  <li><a class="dropdown-item" href="#">CZK</a></li>
-                  <li><a class="dropdown-item" href="#">DKK</a></li>
-                  <li><a class="dropdown-item" href="#">GBP</a></li>
-                  <li><a class="dropdown-item" href="#">HUF</a></li>
-                  <li><a class="dropdown-item" href="#">PLN</a></li>
-                  <li><a class="dropdown-item" href="#">RON</a></li>
-                  <li><a class="dropdown-item" href="#">SEK</a></li>
-                  <li><a class="dropdown-item" href="#">CHF</a></li>
-                  <li><a class="dropdown-item" href="#">ISK</a></li>
-                  <li><a class="dropdown-item" href="#">NOK</a></li>
-                  <li><a class="dropdown-item" href="#">TRY</a></li>
-                  <li><a class="dropdown-item" href="#">AUD</a></li>
-                  <li><a class="dropdown-item" href="#">BRL</a></li>
-                  <li><a class="dropdown-item" href="#">CAD</a></li>
-                  <li><a class="dropdown-item" href="#">CNY</a></li>
-                  <li><a class="dropdown-item" href="#">HKD</a></li>
-                  <li><a class="dropdown-item" href="#">IDR</a></li>
-                  <li><a class="dropdown-item" href="#">ILS</a></li>
-                  <li><a class="dropdown-item" href="#">INR</a></li>
-                  <li><a class="dropdown-item" href="#">KRW</a></li>
-                  <li><a class="dropdown-item" href="#">MXN</a></li>
-                  <li><a class="dropdown-item" href="#">MYR</a></li>
-                  <li><a class="dropdown-item" href="#">NZD</a></li>
-                  <li><a class="dropdown-item" href="#">PHP</a></li>
-                  <li><a class="dropdown-item" href="#">SGD</a></li>
-                  <li><a class="dropdown-item" href="#">THB</a></li>
-                  <li><a class="dropdown-item" href="#">ZAR</a></li>
-                </ul>
-            </div>
-            <!-- Seleziona valuta finale -->
-            <div class="btn-group">
-                <button class="btn btn-secondary btn-sm dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false">
-                    Valuta Finale
-                </button>
-                <ul class="dropdown-menu custom-scroll-dropdown-menu">
-                  <li><a class="dropdown-item" href="#">USD</a></li>
-                  <li><a class="dropdown-item" href="#">JPY</a></li>
-                  <li><a class="dropdown-item" href="#">BGN</a></li>
-                  <li><a class="dropdown-item" href="#">CZK</a></li>
-                  <li><a class="dropdown-item" href="#">DKK</a></li>
-                  <li><a class="dropdown-item" href="#">GBP</a></li>
-                  <li><a class="dropdown-item" href="#">HUF</a></li>
-                  <li><a class="dropdown-item" href="#">PLN</a></li>
-                  <li><a class="dropdown-item" href="#">RON</a></li>
-                  <li><a class="dropdown-item" href="#">SEK</a></li>
-                  <li><a class="dropdown-item" href="#">CHF</a></li>
-                  <li><a class="dropdown-item" href="#">ISK</a></li>
-                  <li><a class="dropdown-item" href="#">NOK</a></li>
-                  <li><a class="dropdown-item" href="#">TRY</a></li>
-                  <li><a class="dropdown-item" href="#">AUD</a></li>
-                  <li><a class="dropdown-item" href="#">BRL</a></li>
-                  <li><a class="dropdown-item" href="#">CAD</a></li>
-                  <li><a class="dropdown-item" href="#">CNY</a></li>
-                  <li><a class="dropdown-item" href="#">HKD</a></li>
-                  <li><a class="dropdown-item" href="#">IDR</a></li>
-                  <li><a class="dropdown-item" href="#">ILS</a></li>
-                  <li><a class="dropdown-item" href="#">INR</a></li>
-                  <li><a class="dropdown-item" href="#">KRW</a></li>
-                  <li><a class="dropdown-item" href="#">MXN</a></li>
-                  <li><a class="dropdown-item" href="#">MYR</a></li>
-                  <li><a class="dropdown-item" href="#">NZD</a></li>
-                  <li><a class="dropdown-item" href="#">PHP</a></li>
-                  <li><a class="dropdown-item" href="#">SGD</a></li>
-                  <li><a class="dropdown-item" href="#">THB</a></li>
-                  <li><a class="dropdown-item" href="#">ZAR</a></li>
-                </ul>
-            </div>
 
-            <!-- JAVASCRIPT -->
-            <script>
+        <!-- Convertitore -->
+        <div class="d-flex justify-content-between convertitore">
+            <div class="w-50"> <!-- w-50 == dimensione -->
+                <div class="input-group mb-3">
+                    <!-- Seleziona valuta di partenza -->
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownValutaPartenza">Valuta di Partenza</button>
+                    <!-- Lista valute da selezionare -->
+                    <ul class="dropdown-menu custom-scroll-dropdown-menu" aria-labelledby="dropdownValutaPartenza" id="menuPartenza">                        <li><a class="dropdown-item" href="#" data-value="USD">USD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="JPY">JPY</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="BGN">BGN</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="CZK">CZK</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="DKK">DKK</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="GBP">GBP</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="HUF">HUF</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="PLN">PLN</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="RON">RON</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="SEK">SEK</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="CHF">CHF</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="ISK">ISK</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="NOK">NOK</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="TRY">TRY</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="AUD">AUD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="BRL">BRL</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="CAD">CAD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="CNY">CNY</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="HKD">HKD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="IDR">IDR</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="ILS">ILS</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="INR">INR</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="KRW">KRW</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="MXN">MXN</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="MYR">MYR</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="NZD">NZD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="PHP">PHP</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="SGD">SGD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="THB">THB</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="ZAR">ZAR</a></li>
+                    </ul>
+                    <!-- Input valore da convertire -->
+                    <input type="number" step="0.01" min="0" class="form-control" aria-label="Text input with dropdown button" placeholder="0.01" id="valoreIn">
+                    <!-- Simbolo valuta -->
+                    <span class="input-group-text" id="simboloPartenza">/</span>
+
+                    <!-- Pulsante per confermare conversione della valuta -->
+                    <div class="input-group-prepend freccia">
+                        <button type="button" class="btn btn-secondary" onclick="loadXMLDoc()">
+                            <svg xmlns="http://www.w3.org/2000/svg" width="16" height="16" fill="currentColor" class="bi bi-arrow-right" viewBox="0 0 16 16">
+                                <path fill-rule="evenodd" d="M1 8a.5.5 0 0 1 .5-.5h11.793l-3.147-3.146a.5.5 0 0 1 .708-.708l4 4a.5.5 0 0 1 0 .708l-4 4a.5.5 0 0 1-.708-.708L13.293 8.5H1.5A.5.5 0 0 1 1 8"/>
+                            </svg>
+                        </button>
+                    </div>
+
+                    <!-- Valuta convertita -->
+
+                    <!-- Lista valuta finale -->
+                    <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownValutaFinale">Valuta Finale</button>
+                    <ul class="dropdown-menu custom-scroll-dropdown-menu" aria-labelledby="dropdownValutaFinale" id="menuFinale">                        <li><a class="dropdown-item" href="#" data-value="USD">USD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="JPY">JPY</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="BGN">BGN</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="CZK">CZK</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="DKK">DKK</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="GBP">GBP</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="HUF">HUF</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="PLN">PLN</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="RON">RON</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="SEK">SEK</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="CHF">CHF</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="ISK">ISK</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="NOK">NOK</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="TRY">TRY</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="AUD">AUD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="BRL">BRL</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="CAD">CAD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="CNY">CNY</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="HKD">HKD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="IDR">IDR</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="ILS">ILS</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="INR">INR</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="KRW">KRW</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="MXN">MXN</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="MYR">MYR</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="NZD">NZD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="PHP">PHP</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="SGD">SGD</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="THB">THB</a></li>
+                        <li><a class="dropdown-item" href="#" data-value="ZAR">ZAR</a></li>
+                    </ul>
+                    <!-- Risultato -->
+                    <input type="number" step="0.01" min="0" class="form-control" aria-label="Text input with dropdown button" placeholder="0.01" id="valoreOut" disabled>
+                    <!-- Simbolo valuta -->
+                    <span class="input-group-text">/</span>
+                </div>
+            </div>
+        </div>
+
+        <!-- JAVASCRIPT -->
+        <script>
                 // Lettore XML
                 function loadXMLDoc() {
                     var xhttp = new XMLHttpRequest();
                     xhttp.onreadystatechange = function() {
                         if(this.readyState == 4 && this.status == 200) {
                             // Inserire nome funzione e passargli xml
+                            convertitore(this);
                         }
                     }
+                    xhttp.open("GET", "https://github.com/ILikePapyrus/gt_my_website/blob/main/XML/eurofxref-daily.xml", true);
+                    xhttp.send();
                 }
-    
-                // function convertitore(xml) {}
-            </script>
-        </div>
-        <input class="form-control" type="text" value="Readonly input here..." aria-label="readonly input example" readonly>
+
+                // Converte la quantità in input
+                function convertitore(xml) {
+                    /*
+                    // Lettore XML
+                    var xmlDoc = xml.responseXML;
+                    // Salva valore inserito
+                    var valoreDaConvertire = document.getElementById("valoreIn").value;
+                    // Inizializzo array contenente TUTTI i tassi di cambio di TUTTE le valute
+                    var arrayTassiCambio;
+                    // Riempire l'array dei tassi di cambio
+                    for(let i = 0; i < 30; i++) {
+                        arrayTassiCambio = document.getElementsByTagName("Cube");
+                    }
+
+
+
+                    // Inizializza variabile valoreConvertito
+                    var valoreConvertito = 0;
+
+                    // Cicla lunghezza arrayTassiCambio
+                    /*
+                    for(var i=0; i<arrayTassiCambio.length; i++) {
+                        if()
+                    }*/
+
+                    // Sostituisce valore convertito a valore di default dell'output box
+                    document.getElementById("valoreIn").value = valoreConvertito;
+                }
+
+                // Sostituisce il testo visibile nel dropdown con ciò che è selezionato
+                function cambiaLabelDropdown(buttonId, menuId) {
+                    // Distingue i due dropdown
+                    var arrPulsanti = document.querySelectorAll('#' + menuId + ' .dropdown-item');
+                    // Cicla array
+                    for (var i = 0; i < items.length; i++) {
+                        // Controlla se avviene un click
+                        items[i].addEventListener('click', function() {
+                            // Prende il testo del pulsante selezionato
+                            var button = document.getElementById(buttonId);
+                            // Sostituisce il testo
+                            button.textContent = this.getAttribute('data-value');
+                        });
+                    }
+                }
+
+                // Carica prima di tutto la funziona cambiaCarattere
+                document.addEventListener('DOMContentLoaded', function() {
+                    cambiaLabelDropdown('dropdownValutaPartenza', 'menuPartenza');
+                    cambiaLabelDropdown('dropdownValutaFinale', 'menuFinale');
+                });
+
+                    /*
+                    const listaCaratteriSoldi = [
+                        '$',   // USD
+                        '¥',   // JPY
+                        'Лв',  // BGN
+                        'Kč',  // CZK
+                        'kr',  // DKK
+                        '£',   // GBP
+                        'Ft',  // HUF
+                        'zł',  // PLN
+                        'L',   // RON
+                        'kr',  // SEK
+                        'Fr',  // CHF
+                        'kr',  // ISK
+                        'kr',  // NOK
+                        '₺',   // TRY
+                        'A$',  // AUD
+                        'R$',  // BRL
+                        'C$',  // CAD
+                        '元',   // CNY
+                        'HK$',  // HKD
+                        'Rp',   // IDR
+                        '₪',    // ILS
+                        '₹',    // INR
+                        '₩',   // KRW
+                        '$',   // MXN
+                        'ރ',   // MYR
+                        'NZ$', // NZD
+                        '₱',   // PHP
+                        'S$',  // SGD
+                        '฿',   // THB
+                        'R'    // ZAR
+                    ];
+                    document.getelementsById("simboloPartenza").value = ""; */
+        </script>
     </body>
 </html>
