@@ -27,8 +27,7 @@
                     <!-- Seleziona valuta di partenza -->
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownValutaPartenza">Valuta di Partenza</button>
                     <!-- Lista valute da selezionare -->
-                    <ul class="dropdown-menu custom-scroll-dropdown-menu" aria-labelledby="dropdownValutaPartenza" id="menuPartenza">                        
-                        <li><a class="dropdown-item" href="#" data-value="USD">USD</a></li>
+                    <ul class="dropdown-menu custom-scroll-dropdown-menu" aria-labelledby="dropdownValutaPartenza" id="menuPartenza">                        <li><a class="dropdown-item" href="#" data-value="USD">USD</a></li>
                         <li><a class="dropdown-item" href="#" data-value="JPY">JPY</a></li>
                         <li><a class="dropdown-item" href="#" data-value="BGN">BGN</a></li>
                         <li><a class="dropdown-item" href="#" data-value="CZK">CZK</a></li>
@@ -73,10 +72,11 @@
                         </button>
                     </div>
 
+                    <!-- Valuta convertita -->
+
                     <!-- Lista valuta finale -->
                     <button class="btn btn-outline-secondary dropdown-toggle" type="button" data-bs-toggle="dropdown" aria-expanded="false" id="dropdownValutaFinale">Valuta Finale</button>
-                    <ul class="dropdown-menu custom-scroll-dropdown-menu" aria-labelledby="dropdownValutaFinale" id="menuFinale">                        
-                        <li><a class="dropdown-item" href="#" data-value="USD">USD</a></li>
+                    <ul class="dropdown-menu custom-scroll-dropdown-menu" aria-labelledby="dropdownValutaFinale" id="menuFinale">                        <li><a class="dropdown-item" href="#" data-value="USD">USD</a></li>
                         <li><a class="dropdown-item" href="#" data-value="JPY">JPY</a></li>
                         <li><a class="dropdown-item" href="#" data-value="BGN">BGN</a></li>
                         <li><a class="dropdown-item" href="#" data-value="CZK">CZK</a></li>
@@ -130,7 +130,7 @@
                             convertitore(this);
                         }
                     }
-                    xhttp.open("GET", "https://ilikepapyrus.github.io/gt_my_website/XML/eurofxref-daily.xml", true);
+                    xhttp.open("GET", "../XMl/eurofxref-daily.xml", true);
                     xhttp.send();
                 }
 
@@ -157,12 +157,18 @@
 
                     // Valore in ingresso
                     var valoreIn = parseFloat(document.getElementById("valoreIn").value);
+                    console.log(valoreIn);
                     // Valuta in cui si vuole convertire
                     var valutaFinale = document.getElementById("dropdownValutaFinale");
+                    console.log(valutaFinale);
 
                     // Conversione
                     if(rates[valutaFinale]) {
                         var valoreOut = valoreIn * rates[valutaFinale];
+                        var contenutoCampoFinale = document.getElementById("valoreOut");
+                        contenutoCampoFinale.disabled = false;
+                        contenutoCampoFinale.value = valoreOut.toFixed(2);
+                        contenutoCampoFinale.disabled = true;
                         // Stampa in console valore convertito
                         console.log(valoreOut.toFixed(2));
                     }
