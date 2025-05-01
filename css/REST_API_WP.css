@@ -1,0 +1,61 @@
+/* FONT */
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700|Roboto%20Mono:400');
+
+body {
+    font-family: 'Roboto Mono';
+    font-weight: 400;
+    background-color: #070704;
+    color: #43613A;
+}
+
+a {
+    text-decoration: none;
+    color: #43613A;
+}
+
+table, th, td {
+    border: 1px solid #72AA7B;
+    border-collapse: collapse;
+}
+
+table {
+    margin-left: auto;
+    margin-right: auto;
+}
+
+th {
+    text-align: center;
+}
+
+th, td {
+    padding: 1rem;
+}
+
+p {
+    align-content: center;
+    text-align: center;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inconsolata';
+    font-weight: 700;
+    color: #CDCCAC;
+}
+
+html { font-size: 100%; }
+
+h1 {
+    font-size: 4.210rem;
+    text-align: center;
+}
+
+h2 { font-size: 3.158rem; }
+
+h3 { font-size: 2.369rem; }
+
+h4 { font-size: 1.777rem; }
+
+h5 { font-size: 1.333rem; }
+
+small { font-size: 0.750rem; }
