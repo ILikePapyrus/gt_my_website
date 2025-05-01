@@ -1,0 +1,52 @@
+<?xml version="1.0" encoding="UTF-8" ?>
+<definitions name="test"
+    targetNamespace="http://localhost/soap"
+    xmlns:tns="http://localhost/soap"
+    xmlns:soap="http://schemas.xmlsoap.org/wsdl/soap/"
+    xmlns:xsd="http://www.w3.org/2001/XMLSchema"
+    xmlns:soapenc="http://schemas.xmlsoap.org/soap/encoding/"
+    xmlns:wsdl="http://schemas.xmlsoap.org/wsdl/"
+    xmlns="http://schemas.xmlsoap.org/wsdl/">
+
+    <!-- Definizione della richiesta -->
+    <message name="richiestaDati">
+        <part name="nome" type="xsd:string"/>
+        <part name="cognome" type="xsd:string"/>
+        <part name="email" type="xsd:string"/>
+        <part name="password" type="xsd:string"/>
+    </message>
+
+    <!-- Definizione della risposta -->
+    <message name="rispostaDati">
+        <part name="return" type="xsd:string"/>
+    </message>
+
+    <!-- Porta -->
+    <portType name="portaDatiType">
+        <operation name="creaTabella">
+            <input message="tns:richiestaDati" />
+            <output message="tns:rispostaDati" />
+        </operation>
+    </portType>
+
+    <!-- Binding -->
+    <binding name="bindingDati" type="tns:portaDatiType">
+        <soap:binding style="rpc" transport="http://schemas.xmlsoap.org/soap/http" />
+        <operation name="creaTabella">
+            <soap:operation soapAction="" />
+            <input>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </input>
+            <output>
+                <soap:body use="encoded" encodingStyle="http://schemas.xmlsoap.org/soap/encoding/" />
+            </output>
+        </operation>
+    </binding>
+
+    <!-- Servizio -->
+    <service name="SalutinoService">
+        <port name="portaDati" binding="tns:bindingDati">
+            <soap:address location="http://localhost/es_SOAP/server.php" />
+        </port>
+    </service>
+</definitions>

@@ -1,0 +1,66 @@
+/* FONT */
+
+@import url('https://fonts.googleapis.com/css?family=Inconsolata:700|Roboto%20Mono:400');
+
+body {
+    font-family: 'Roboto Mono';
+    font-weight: 400;
+    background-color: #fbfefb;
+    color: #0e1f09;
+}
+
+h1, h2, h3, h4, h5, h6 {
+    font-family: 'Inconsolata';
+    font-weight: 700;
+    color: #5ac643;
+}
+
+h2 { font-size: 3.158rem; }
+
+h3 { font-size: 2.369rem; }
+
+h4 { font-size: 1.777rem; }
+
+h5 { font-size: 1.333rem; }
+
+small { font-size: 0.750rem; }
+
+/* PAGINA WEB */ 
+
+/* PALETTE
+--text: #0e1f09;
+--background: #fbfefb;
+--primary: #5ac643;
+--secondary: #99e0bb;
+--accent: #63d0ba;
+*/
+
+h1 {
+    font-size: 4.210rem;
+    text-align: center;
+}
+
+.spacing-top {
+    padding-top: 1.5%;
+}
+
+.card {
+    width: fit-content;
+    background-color: #99e0bb;
+    color: #0e1f09;
+    
+}
+
+#submitButton {
+    background-color: #63d0ba;
+    color: #0e1f09;
+}
+
+table, th, td {
+    border: 1px solid black;
+    border-collapse: collapse;
+}
+
+table {
+    padding-right: 5rem;
+}
